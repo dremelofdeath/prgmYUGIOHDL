@@ -1,6 +1,6 @@
 ![prgmYUGIOHDL](docs/title.png)
 
-Yu-Gi-Oh! Life Counter for TI-83 and 84 calculators I made when I was in 8th-10th grade (mostly around 2001-2002).
+Yu-Gi-Oh! Life Counter for TI-83 and 84 calculators I made when I was in 8th-10th grade (mostly around 2002-2003).
 
 ![Startup and shutdown](docs/startup.gif)
 
