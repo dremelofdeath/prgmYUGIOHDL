@@ -1,0 +1,383 @@
+AxesOff
+Horiz
+Float
+ClrHome
+ClrDraw
+0→N
+If K≠1
+Then
+0→G
+0→L
+0→H
+0→M
+0→I
+0→J
+End
+1→F
+Goto 02
+Lbl 01
+ClrHome
+Lbl 0
+If G<0:Text(1,32,"0         ")
+If H<0:Text(9,32,"0         ")
+If G≥1000000 or H≥1000000
+Then
+If G≥1000000 and H≥1000000:Goto 10
+0→F
+Lbl 11
+If G≥1000000
+Then
+999999→G
+If F=0:Output(2,1,"G reset 999999")
+End
+If H≥1000000
+Then
+999999→H
+If F=0:Output(2,1,"H reset 999999")
+End
+Output(1,1,"Overflow.")
+If 0
+Then
+Lbl 10
+Output(2,1,"G reset 999999")
+Output(3,1,"H reset 999999")
+1→F
+Goto 11
+End
+Pause 
+ClrHome
+0→F
+End
+If G<100000:Text(1,52,"     ")
+If H<100000:Text(9,52,"     ")
+If G<10000:Text(1,48,"    ")
+If H<10000:Text(9,48,"    ")
+If G<1000:Text(1,44,"    ")
+If H<1000:Text(9,44,"    ")
+If G<100:Text(1,40,"     ")
+If H<100:Text(9,40,"     ")
+If L<100:Text(1,61,"        ")
+If M<100:Text(9,65,"        ")
+If G<10:Text(1,36,"      ")
+If H<10:Text(9,36,"      ")
+If L<10:Text(1,61,"         ")
+If M<10:Text(9,61,"         ")
+Text(1,69,"             ")
+Text(9,69,"             ")
+If I>1
+Then
+Text(19,1,"P1 Winning streak:")
+Text(19,60,I)
+End
+If J>1
+Then
+Text(19,1,"P2 Winning streak:")
+Text(19,60,J)
+End
+If I<1 and J<1:Text(19,1,"                                                                  ")
+Goto S
+Lbl 12
+If F=1:Goto 03
+Text(1,1,"Player 1:")
+Text(1,32,G)
+Text(1,57,L)
+Text(9,1,"Player 2:")
+Text(9,32,H)
+Text(9,57,M)
+getKey→F
+If G≤0 and H≤0:Goto Z
+If G≤0:Goto 1
+If H≤0:Goto 2
+Goto 3
+Lbl Z
+0→G:0→H
+Text(1,35,"                    ")
+Text(9,35,"                    ")
+Text(9,32,H)
+Text(1,32,G)
+Text(19,1,"Tie game...                                 ")
+0→I
+0→J
+Pause 
+Text(19,1,"                                          ")
+8000→G
+8000→H
+Goto 02
+Lbl 1
+0→G
+Text(1,35,"                    ")
+Text(1,32,G)
+Text(19,1,"Player 2 wins!!!                  ")
+M+1→M
+J+1→J
+0→I
+0→P
+0→Q
+Pause 
+Text(19,1,"                                                  ")
+8000→G
+8000→H
+Goto 02
+Lbl 2
+0→H
+Text(9,35,"                    ")
+Text(9,32,H)
+Text(19,1,"Player 1 wins!!!                 ")
+L+1→L
+I+1→I
+0→J
+0→P
+0→Q
+Pause 
+Text(19,1,"                                                          ")
+8000→G
+8000→H
+Goto 02
+Lbl 3
+If F≠0:Goto 4
+If F=0:Goto 02
+Lbl 4
+If F=15:Output(1,1,"Version 1.4.4")
+If F=45:Goto E
+If F=91:Goto H
+If F=95:Goto A
+If F=85:Goto B
+If F=75:Goto G
+If F=23:Goto C
+If F=65:Goto D
+If F=55:Goto F
+If F=84:Goto I
+If F=93:Goto J
+If F=22:Goto K
+If F=71:Goto L
+If F=81:Goto M
+If F=11:Goto N
+If F=51:Goto O
+If F=61:Goto P
+If F=52:Goto Q
+If F=62:Goto R
+If F=54:Goto T
+If F=64:Goto U
+If F=53:Goto X1
+If F=63:Goto X2
+Goto 02
+Lbl A
+Disp "Add to whom?  ","0 cancels, 1 or"
+Input "2. Enter: ",E
+If E=0:Goto 01
+If E=1:Goto A1
+If E=2:Goto A2
+ClrHome
+Disp "Invalid entry."
+Pause 
+ClrHome
+Goto 02
+Lbl A1
+Input "How much? ",D
+G+D→G
+ClrHome
+Goto 02
+Lbl A2
+Input "How much? ",D
+H+D→H
+ClrHome
+Goto 02
+Lbl B
+Disp "Sub from whom?  ","0 cancels, 1 or"
+Input "2. Enter: ",E
+If E=0:Goto 01
+If E=1:Goto B1
+If E=2:Goto B2
+ClrHome
+Disp "Invalid entry."
+Pause 
+ClrHome
+Goto 02
+Lbl B1
+Input "How much? ",D
+G-D→G
+ClrHome
+Goto 02
+Lbl B2
+Input "How much? ",D
+H-D→H
+ClrHome
+Goto 02
+Lbl C
+8000→G
+8000→H
+0→P
+0→Q
+Goto 02
+Lbl D
+ClrHome
+Disp "Sub from both."
+Output(3,1,"Player 2:")
+Input "Player 1: ",D
+Input "Player 2: ",E
+G-D→G
+H-E→H
+ClrHome
+Goto 02
+Lbl F
+Full
+1→K
+AxesOn
+Goto 9
+Lbl 02
+If N=1:Goto 0
+Line(0,−10,10,−10)
+Line(1,−10,10,−8)
+Line(2,−10,10,−6)
+Line(3,−10,10,−4)
+Line(4,−10,10,−2)
+Line(5,−10,10,0)
+Line(6,−10,10,2)
+Line(7,−10,10,4)
+Line(8,−10,10,6)
+Line(9,−10,10,8)
+Line(10,−10,10,10)
+1→N
+Goto 0
+Lbl 03
+Text(1,1,"Player 1:")
+Text(1,32,G)
+Text(1,57,L)
+Text(9,1,"Player 2:")
+Text(9,32,H)
+Text(9,57,M)
+While F<40
+Text(19,1,"Duel Calc/Trac!                    ")
+F+1→F
+End
+Text(19,1,"                                                                          ")
+While F<80
+Text(19,1,"Written by Zack Murray")
+F+1→F
+End
+Text(19,1,"                                                                          ")
+0→F
+If K≠1
+Then
+While G<8000
+Text(19,1,"It's time to duel!!!")
+Text(1,32,G)
+Text(9,32,H)
+G+100→G
+H+100→H
+End
+End
+Text(19,1,"                                                          ")
+Goto 0
+Lbl G
+Disp "Add to both.  "
+Output(3,1,"Player 2:")
+Input "Player 1: ",D
+Input "Player 2: ",E
+G+D→G
+H+E→H
+ClrHome
+Goto 02
+Lbl H
+Disp "Adjust LP.     "
+Output(3,1,"Player 2:")
+Input "Player 1: ",D
+Input "Player 2: ",E
+D→G
+E→H
+ClrHome
+Goto 02
+Lbl I
+ClrHome
+randInt(1,6)→E
+Output(1,1,"Rolled")
+Output(1,8,E)
+Output(1,9,".")
+Pause 
+ClrHome
+Goto 0
+Lbl J
+randInt(1,2)→E
+Output(1,1,"Flipped")
+If E=1:Output(1,9,"heads.")
+If E=2:Output(1,9,"tails.")
+Pause 
+ClrHome
+Goto 0
+Lbl K
+0→L
+0→M
+0→I
+0→J
+Goto C
+Lbl L
+0→G
+Goto 0
+Lbl M
+0→H
+Goto 0
+Lbl N
+If G=8000 and H=8000:Goto 8
+If (G=2000 and H=2000) or (G=4000 and H=4000)
+Then
+G*2→G
+H*2→H
+End
+Goto 01
+Lbl 8
+2000→G
+2000→H
+Goto 01
+Lbl O
+P+1→P
+Goto 0
+Lbl P
+Q+1→Q
+Goto 0
+Lbl Q
+If P>0:P-1→P
+Goto 0
+Lbl R
+If Q>0:Q-1→Q
+Goto 0
+Lbl S
+If P≠0:Text(1,69,P)
+If Q≠0:Text(9,69,Q)
+Goto 12
+Lbl T
+0→P
+Goto 0
+Lbl U
+0→Q
+Goto 0
+Lbl X1
+ClrHome
+Disp "Set P1 Counter."
+Input ">",P
+If P<0:0→P
+ClrHome
+Goto 0
+Lbl X2
+ClrHome
+Disp "Set P2 Counter."
+Input ">",Q
+If Q<0:0→Q
+ClrHome
+Goto 0
+Lbl E
+DelVar P
+DelVar Q
+DelVar D
+DelVar E
+Full
+DelVar F
+DelVar G
+AxesOn
+DelVar H
+ClrDraw
+DelVar L
+0→K
+DelVar M
+Lbl 9
+0→N
+Output(1,1,"")
